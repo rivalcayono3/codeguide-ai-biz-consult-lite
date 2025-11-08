@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Parkinsans } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 import { ThemeProvider } from "@/components/theme-provider";
+import LayoutWrapper from "@/components/layout-wrapper";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -23,9 +24,9 @@ const parkinsans = Parkinsans({
 });
 
 export const metadata: Metadata = {
-  title: "CodeGuide Starter Kit",
+  title: "AI Business Consultation Platform",
   description:
-    "A modern Next.js starter with TypeScript, TailwindCSS, shadcn/ui, Vercel AI SDK, Clerk, and Supabase",
+    "Get comprehensive AI-powered business analysis with expert reviews and consultation",
 };
 
 export default function RootLayout({
@@ -45,7 +46,9 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            {children}
+            <LayoutWrapper>
+              {children}
+            </LayoutWrapper>
           </ThemeProvider>
         </body>
       </html>
