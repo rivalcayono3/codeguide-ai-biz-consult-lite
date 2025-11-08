@@ -9,9 +9,11 @@ import {
   Database,
   Shield,
   ExternalLink,
+  TrendingUp,
 } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
 
@@ -44,11 +46,11 @@ export default function Home() {
             className="rounded-xl sm:w-[60px] sm:h-[60px]"
           />
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-blue-600 via-blue-500 to-blue-400 bg-clip-text text-transparent">
-            CodeGuide Starter
+            AI Business Consultation Platform
           </h1>
         </div>
         <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
-          Build faster with your AI coding agent
+          Get comprehensive AI-powered business analysis and expert consultation
         </p>
       </div>
 
@@ -149,8 +151,21 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Chat Section */}
+        {/* Action Section */}
         <SignedIn>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+            <Link href="/business-analysis">
+              <Button size="lg" className="w-full sm:w-auto">
+                <TrendingUp className="mr-2 h-4 w-4" />
+                Start Business Analysis
+              </Button>
+            </Link>
+            <div className="text-sm text-muted-foreground">
+              or use the chat below for general questions
+            </div>
+          </div>
+
+          {/* Chat Section */}
           <div className="mt-6 sm:mt-8">
             <Chat />
           </div>
